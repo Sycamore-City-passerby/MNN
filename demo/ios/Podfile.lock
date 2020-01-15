@@ -1,16 +1,16 @@
 PODS:
-  - MNN (1.0.0)
+  - MNN (0.2.1.7)
 
 DEPENDENCIES:
-  - MNN (from `../../`)
+  - MNN
 
-EXTERNAL SOURCES:
-  MNN:
-    :path: "../../"
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - MNN
 
 SPEC CHECKSUMS:
-  MNN: 31075cbcadf73e96c1bf29cccc97e4ef131e0650
+  MNN: 39da287e4e82428453063dfa750f8e09e3efbb47
 
-PODFILE CHECKSUM: b0491e2fa8f04fdaec2683a1c6c9de3a1d483842
+PODFILE CHECKSUM: 5d65d60d4e4d31805461ff11c102ceba56096110
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
