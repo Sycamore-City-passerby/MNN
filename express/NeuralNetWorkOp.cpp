@@ -84,16 +84,15 @@ VARP _Const(const void* ptr, INTS shape, Dimensionformat format, halide_type_t t
 }
 
 VARP _Const(float value, INTS shape, Dimensionformat format) {
-    auto size                          = std::accumulate(shape.begin(), shape.end(), 1, std::multiplies<int>());
-    std::vector<float> values;
-    values.resize(size);
-    for (int i = 0; i < size; ++i) {
-        values[i] = value;
-    }
     Variable::Info info;
     info.dim = std::move(shape);
     info.order = format;
     info.type = halide_type_of<float>();
+    info.syncSize();
+    std::vector<float> values(info.size);
+    for (int i = 0; i < info.size; ++i) {
+        values[i] = value;
+    }
     info.ptr = (void*)values.data();
     return (Variable::create(Expr::create(std::move(info))));
 }
@@ -139,6 +138,9 @@ VARP _Conv(VARP weight, VARP bias, VARP x, PaddingMode pad, INTS stride, INTS di
     conv2D->common->dilateY     = dilate[1];
     conv2D->common->kernelX     = kernelSize[0];
     conv2D->common->kernelY     = kernelSize[1];
+    if (nullptr == bias) {
+        return (Variable::create(Expr::create(convOp.get(), {x, weight})));
+    }
     return (Variable::create(Expr::create(convOp.get(), {x, weight, bias})));
 }
 VARP _Conv(std::vector<float>&& weight, std::vector<float>&& bias, VARP x, INTS channel, INTS kernelSize,
@@ -413,13 +415,13 @@ Returns:
 A variable. If `input` is already `format`, then return `input` directly, otherwize add a variable after `input` with `format`.
 */
 VARP _Convert(VARP input, Dimensionformat format) {
-    std::unique_ptr<OpT> convert(new OpT);
     if (nullptr != input->getInfo()) {
         auto source = input->getInfo()->order;
         if (source == format) {
             return input;
         }
     }
+    std::unique_ptr<OpT> convert(new OpT);
     convert->type                               = OpType_ConvertTensor;
     convert->main.type                          = OpParameter_TensorConvertInfo;
     convert->main.value                         = new TensorConvertInfoT;
@@ -1308,6 +1310,42 @@ VARP _Interp(VARPS xs, float widthScale, float heightScale, int outputWidth, int
     interp->main.value  = param;
     interp->main.type   = OpParameter_Interp;
     return Variable::create(Expr::create(std::move(interp), xs));
+}
+VARP _ZeroGrad(VARP x) {
+    std::unique_ptr<OpT> op(new OpT);
+    op->type = OpType_ZeroGrad;
+    return Variable::create(Expr::create(std::move(op), {x}));
+}
+
+VARP _Conv(std::vector<int8_t>&& weight, std::vector<int>&& bias, std::vector<float>&& scale, VARP x, INTS channel, INTS kernelSize,
+                              PaddingMode pad, INTS stride, INTS dilate, int group, INTS pads) {
+    std::unique_ptr<OpT> convOp(new OpT);
+    convOp->type = OpType_ConvInt8;
+    if (channel[0] == channel[1] && channel[0] == group) {
+        convOp->type = OpType_DepthwiseConvInt8;
+    }
+    convOp->main.type  = OpParameter_Convolution2D;
+    convOp->main.value = new Convolution2DT;
+    auto conv2D        = convOp->main.AsConvolution2D();
+    conv2D->common.reset(new Convolution2DCommonT);
+    conv2D->common->padMode     = _convertPadMode(pad);
+    conv2D->common->padX        = pads[0];
+    conv2D->common->padY        = pads[1];
+    conv2D->common->strideX     = stride[0];
+    conv2D->common->strideY     = stride[1];
+    conv2D->common->group       = group;
+    conv2D->common->outputCount = channel[1];
+    conv2D->common->inputCount  = channel[0];
+    conv2D->common->dilateX     = dilate[0];
+    conv2D->common->dilateY     = dilate[1];
+    conv2D->common->kernelX     = kernelSize[0];
+    conv2D->common->kernelY     = kernelSize[1];
+    MNN_ASSERT(weight.size() == channel[1] * (channel[0] / group) * kernelSize[0] * kernelSize[1]);
+    conv2D->symmetricQuan.reset(new QuantizedFloatParamT);
+    conv2D->symmetricQuan->bias = std::move(bias);
+    conv2D->symmetricQuan->scale = std::move(scale);
+    conv2D->symmetricQuan->weight = std::move(weight);
+    return (Variable::create(Expr::create(convOp.get(), {x})));
 }
 
 } // namespace Express

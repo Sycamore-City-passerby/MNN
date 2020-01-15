@@ -37,8 +37,8 @@ MNN_PUBLIC VARP _Conv(std::vector<float>&& weight, std::vector<float>&& bias, VA
                       PaddingMode pad = VALID, INTS stride = {1, 1}, INTS dilate = {1, 1}, int group = 1, INTS pads = {0, 0});
 MNN_PUBLIC VARP _Deconv(VARP weight, VARP bias, VARP x, PaddingMode pad = VALID, INTS stride = {1, 1},
                                 INTS dilate = {1, 1}, int group = 1, INTS pads = {0, 0});
-MNN_PUBLIC VARP _MaxPool(VARP x, INTS kernel, INTS stride, PaddingMode pad = VALID, INTS pads= {0, 0});
-MNN_PUBLIC VARP _AvePool(VARP x, INTS kernel, INTS stride, PaddingMode pad = VALID, INTS pads= {0, 0});
+MNN_PUBLIC VARP _MaxPool(VARP x, INTS kernel, INTS stride = {1, 1}, PaddingMode pad = VALID, INTS pads= {0, 0});
+MNN_PUBLIC VARP _AvePool(VARP x, INTS kernel, INTS stride = {1, 1}, PaddingMode pad = VALID, INTS pads= {0, 0});
 MNN_PUBLIC VARP _Reshape(VARP x, INTS shape, Dimensionformat original_format = NHWC);
 MNN_PUBLIC VARP _Reshape(VARP x, VARP shape);
 MNN_PUBLIC VARP _Scale(VARP x, int channels, std::vector<float>&& scales, std::vector<float>&& bias);
@@ -108,5 +108,10 @@ MNN_PUBLIC VARP _DetectionOutput(VARP location, VARP confidence, VARP priorbox,
                         bool variance_encoded_in_target,
                         int keep_top_k, float confidence_threshold, float visualize_threshold); 
 MNN_PUBLIC VARP _Interp(VARPS xs, float widthScale, float heightScale, int outputWidth, int outputHeight, int resizeType, bool alignCorners);
+
+MNN_PUBLIC VARP _ZeroGrad(VARP x);
+MNN_PUBLIC VARP _Conv(std::vector<int8_t>&& weight, std::vector<int>&& bias, std::vector<float>&& scale, VARP x, INTS channel, INTS kernelSize,
+                      PaddingMode pad, INTS stride, INTS dilate, int group, INTS pads);
+
 } // namespace Express
 } // namespace MNN

@@ -89,6 +89,17 @@
 		1F501F9D2397BB00004E8721 /* expr in Headers */ = {isa = PBXBuildFile; fileRef = 1F501F762397BA5A004E8721 /* expr */; settings = {ATTRIBUTES = (Public, ); }; };
 		22EA50A92051677800C3906C /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F78AC261FCD495800205A7C /* Metal.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		22EA50B02051681600C3906C /* MNN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F1465B71FA18D1000F9860A /* MNN.framework */; };
+		4829A2D623CC26AE00623BF5 /* MatMulTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4829A2CB23CC26AD00623BF5 /* MatMulTest.cpp */; };
+		4829A2D723CC26AE00623BF5 /* GatherTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4829A2CC23CC26AD00623BF5 /* GatherTest.cpp */; };
+		4829A2D823CC26AE00623BF5 /* MatrixBandTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4829A2CD23CC26AD00623BF5 /* MatrixBandTest.cpp */; };
+		4829A2D923CC26AE00623BF5 /* ExtraTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4829A2CE23CC26AD00623BF5 /* ExtraTest.cpp */; };
+		4829A2DA23CC26AE00623BF5 /* AllAnyTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4829A2CF23CC26AD00623BF5 /* AllAnyTest.cpp */; };
+		4829A2DB23CC26AE00623BF5 /* MultiThreadLoad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4829A2D023CC26AD00623BF5 /* MultiThreadLoad.cpp */; };
+		4829A2DC23CC26AE00623BF5 /* ConvInt8Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4829A2D123CC26AD00623BF5 /* ConvInt8Test.cpp */; };
+		4829A2DD23CC26AE00623BF5 /* ExprResizeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4829A2D223CC26AD00623BF5 /* ExprResizeTest.cpp */; };
+		4829A2DE23CC26AE00623BF5 /* ReverseSequenceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4829A2D323CC26AD00623BF5 /* ReverseSequenceTest.cpp */; };
+		4829A2DF23CC26AE00623BF5 /* ReplaceTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4829A2D423CC26AD00623BF5 /* ReplaceTest.cpp */; };
+		4829A2E023CC26AE00623BF5 /* PaddingTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4829A2D523CC26AD00623BF5 /* PaddingTest.cpp */; };
 		486FDF47223E4B2800F487FB /* MetalBinary.mm in Sources */ = {isa = PBXBuildFile; fileRef = 486FDF44223E4B2700F487FB /* MetalBinary.mm */; };
 		486FDF48223E4B2800F487FB /* MetalBinary.metal in Sources */ = {isa = PBXBuildFile; fileRef = 486FDF45223E4B2800F487FB /* MetalBinary.metal */; };
 		4888759B215B639F0079B12E /* MetalSpatialProduct.mm in Sources */ = {isa = PBXBuildFile; fileRef = 488873C9215B639D0079B12E /* MetalSpatialProduct.mm */; };
@@ -153,7 +164,6 @@
 		9200049A21EDBDF600BCE892 /* ImageProcessTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9200045F21EDBDF600BCE892 /* ImageProcessTest.cpp */; };
 		9200049B21EDBDF600BCE892 /* MatrixTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9200046021EDBDF600BCE892 /* MatrixTest.cpp */; };
 		9200049D21EDBDF600BCE892 /* TFQuantizedConv2DTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9200046321EDBDF600BCE892 /* TFQuantizedConv2DTest.cpp */; };
-		9200049F21EDBDF600BCE892 /* PackTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9200046521EDBDF600BCE892 /* PackTest.cpp */; };
 		920004A021EDBDF600BCE892 /* SqueezeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9200046621EDBDF600BCE892 /* SqueezeTest.cpp */; };
 		920004A121EDBDF600BCE892 /* LSTMTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9200046721EDBDF600BCE892 /* LSTMTest.cpp */; };
 		920004A221EDBDF600BCE892 /* QuantizedReshapeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9200046821EDBDF600BCE892 /* QuantizedReshapeTest.cpp */; };
@@ -870,6 +880,17 @@
 		1F501F7B2397BA5A004E8721 /* Tensor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Tensor.hpp; path = MNN/Tensor.hpp; sourceTree = "<group>"; };
 		1F501F7C2397BA5A004E8721 /* MNNForwardType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNNForwardType.h; path = MNN/MNNForwardType.h; sourceTree = "<group>"; };
 		1F501F7E2397BA5B004E8721 /* MNNSharedContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNNSharedContext.h; path = MNN/MNNSharedContext.h; sourceTree = "<group>"; };
+		4829A2CB23CC26AD00623BF5 /* MatMulTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MatMulTest.cpp; sourceTree = "<group>"; };
+		4829A2CC23CC26AD00623BF5 /* GatherTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GatherTest.cpp; sourceTree = "<group>"; };
+		4829A2CD23CC26AD00623BF5 /* MatrixBandTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MatrixBandTest.cpp; sourceTree = "<group>"; };
+		4829A2CE23CC26AD00623BF5 /* ExtraTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExtraTest.cpp; sourceTree = "<group>"; };
+		4829A2CF23CC26AD00623BF5 /* AllAnyTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AllAnyTest.cpp; sourceTree = "<group>"; };
+		4829A2D023CC26AD00623BF5 /* MultiThreadLoad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiThreadLoad.cpp; sourceTree = "<group>"; };
+		4829A2D123CC26AD00623BF5 /* ConvInt8Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConvInt8Test.cpp; sourceTree = "<group>"; };
+		4829A2D223CC26AD00623BF5 /* ExprResizeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExprResizeTest.cpp; sourceTree = "<group>"; };
+		4829A2D323CC26AD00623BF5 /* ReverseSequenceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReverseSequenceTest.cpp; sourceTree = "<group>"; };
+		4829A2D423CC26AD00623BF5 /* ReplaceTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReplaceTest.cpp; sourceTree = "<group>"; };
+		4829A2D523CC26AD00623BF5 /* PaddingTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PaddingTest.cpp; sourceTree = "<group>"; };
 		486FDF44223E4B2700F487FB /* MetalBinary.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MetalBinary.mm; sourceTree = "<group>"; };
 		486FDF45223E4B2800F487FB /* MetalBinary.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MetalBinary.metal; sourceTree = "<group>"; };
 		488873C9215B639D0079B12E /* MetalSpatialProduct.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MetalSpatialProduct.mm; sourceTree = "<group>"; };
@@ -939,7 +960,6 @@
 		9200045F21EDBDF600BCE892 /* ImageProcessTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageProcessTest.cpp; sourceTree = "<group>"; };
 		9200046021EDBDF600BCE892 /* MatrixTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MatrixTest.cpp; sourceTree = "<group>"; };
 		9200046321EDBDF600BCE892 /* TFQuantizedConv2DTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TFQuantizedConv2DTest.cpp; sourceTree = "<group>"; };
-		9200046521EDBDF600BCE892 /* PackTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PackTest.cpp; sourceTree = "<group>"; };
 		9200046621EDBDF600BCE892 /* SqueezeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SqueezeTest.cpp; sourceTree = "<group>"; };
 		9200046721EDBDF600BCE892 /* LSTMTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LSTMTest.cpp; sourceTree = "<group>"; };
 		9200046821EDBDF600BCE892 /* QuantizedReshapeTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuantizedReshapeTest.cpp; sourceTree = "<group>"; };
@@ -1645,6 +1665,25 @@
 			path = ../../../include;
 			sourceTree = "<group>";
 		};
+		4829A2CA23CC26AD00623BF5 /* expr */ = {
+			isa = PBXGroup;
+			children = (
+				4829A2CB23CC26AD00623BF5 /* MatMulTest.cpp */,
+				4829A2CC23CC26AD00623BF5 /* GatherTest.cpp */,
+				4829A2CD23CC26AD00623BF5 /* MatrixBandTest.cpp */,
+				4829A2CE23CC26AD00623BF5 /* ExtraTest.cpp */,
+				4829A2CF23CC26AD00623BF5 /* AllAnyTest.cpp */,
+				4829A2D023CC26AD00623BF5 /* MultiThreadLoad.cpp */,
+				4829A2D123CC26AD00623BF5 /* ConvInt8Test.cpp */,
+				4829A2D223CC26AD00623BF5 /* ExprResizeTest.cpp */,
+				4829A2D323CC26AD00623BF5 /* ReverseSequenceTest.cpp */,
+				4829A2D423CC26AD00623BF5 /* ReplaceTest.cpp */,
+				4829A2D523CC26AD00623BF5 /* PaddingTest.cpp */,
+			);
+			name = expr;
+			path = ../../../test/expr;
+			sourceTree = "<group>";
+		};
 		48593FB423A89B2F0069452A /* express */ = {
 			isa = PBXGroup;
 			children = (
@@ -2155,6 +2194,7 @@
 		9200045021EDBCEC00BCE892 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				4829A2CA23CC26AD00623BF5 /* expr */,
 				9200045C21EDBDF600BCE892 /* core */,
 				9200045E21EDBDF600BCE892 /* cv */,
 				925F018721FF1DF400E648A1 /* model */,
@@ -2216,7 +2256,6 @@
 				9200046721EDBDF600BCE892 /* LSTMTest.cpp */,
 				9200046A21EDBDF600BCE892 /* MatMulTest.cpp */,
 				9200047F21EDBDF600BCE892 /* NormalizeTest.cpp */,
-				9200046521EDBDF600BCE892 /* PackTest.cpp */,
 				9200048321EDBDF600BCE892 /* PermuteTest.cpp */,
 				9200048721EDBDF600BCE892 /* PoolingTest.cpp */,
 				9200049621EDBDF600BCE892 /* PReLUTest.cpp */,
@@ -3422,10 +3461,13 @@
 				92A4E0FC21F05A4F000B0919 /* MemoryUtilsTest.cpp in Sources */,
 				920004B521EDBDF600BCE892 /* BinaryOPTest.cpp in Sources */,
 				92D765BD222819EF00178BE5 /* DirectedAcyclicGraphTest.cpp in Sources */,
+				4829A2D623CC26AE00623BF5 /* MatMulTest.cpp in Sources */,
 				920004D221EDBE1100BCE892 /* MNNTestSuite.cpp in Sources */,
 				920004BE21EDBDF600BCE892 /* CastTest.cpp in Sources */,
 				920004AB21EDBDF600BCE892 /* InterpTest.cpp in Sources */,
 				920004C421EDBDF600BCE892 /* ConcatTest.cpp in Sources */,
+				4829A2DB23CC26AE00623BF5 /* MultiThreadLoad.cpp in Sources */,
+				4829A2DA23CC26AE00623BF5 /* AllAnyTest.cpp in Sources */,
 				920004AA21EDBDF600BCE892 /* GatherV2Test.cpp in Sources */,
 				920004B621EDBDF600BCE892 /* BatchToSpaceNDTest.cpp in Sources */,
 				920004BB21EDBDF600BCE892 /* ScaleTest.cpp in Sources */,
@@ -3437,7 +3479,9 @@
 				920004B921EDBDF600BCE892 /* NormalizeTest.cpp in Sources */,
 				920004A421EDBDF600BCE892 /* MatMulTest.cpp in Sources */,
 				920004C721EDBDF600BCE892 /* CropTest.cpp in Sources */,
+				4829A2D823CC26AE00623BF5 /* MatrixBandTest.cpp in Sources */,
 				920004BD21EDBDF600BCE892 /* PermuteTest.cpp in Sources */,
+				4829A2DD23CC26AE00623BF5 /* ExprResizeTest.cpp in Sources */,
 				92D765BC222819EF00178BE5 /* ScheduleTest.cpp in Sources */,
 				9273AB5D1FE7BE4D00477B22 /* main.m in Sources */,
 				920004A121EDBDF600BCE892 /* LSTMTest.cpp in Sources */,
@@ -3447,6 +3491,8 @@
 				925702D021EF0F5300A2A3CA /* TensorUtilsTest.cpp in Sources */,
 				920004A621EDBDF600BCE892 /* LRNTest.cpp in Sources */,
 				920004B021EDBDF600BCE892 /* TensorConverterTest.cpp in Sources */,
+				4829A2E023CC26AE00623BF5 /* PaddingTest.cpp in Sources */,
+				4829A2DE23CC26AE00623BF5 /* ReverseSequenceTest.cpp in Sources */,
 				920004AF21EDBDF600BCE892 /* DequantizeTest.cpp in Sources */,
 				920004CC21EDBDF600BCE892 /* RangeTest.cpp in Sources */,
 				920004BF21EDBDF600BCE892 /* ResizeTest.cpp in Sources */,
@@ -3469,18 +3515,21 @@
 				920004B321EDBDF600BCE892 /* ReLUTest.cpp in Sources */,
 				9200049D21EDBDF600BCE892 /* TFQuantizedConv2DTest.cpp in Sources */,
 				920004D321EDBE1100BCE892 /* TestUtils.cpp in Sources */,
+				4829A2DF23CC26AE00623BF5 /* ReplaceTest.cpp in Sources */,
 				920004A721EDBDF600BCE892 /* RankTest.cpp in Sources */,
 				920004CB21EDBDF600BCE892 /* SpaceToBatchNDTest.cpp in Sources */,
 				920004B421EDBDF600BCE892 /* DeconvolutionTest.cpp in Sources */,
 				920004C821EDBDF600BCE892 /* SliceTFTest.cpp in Sources */,
+				4829A2D923CC26AE00623BF5 /* ExtraTest.cpp in Sources */,
 				920004D421EDBE1100BCE892 /* TestUtils.mm in Sources */,
 				9200049B21EDBDF600BCE892 /* MatrixTest.cpp in Sources */,
 				920004B121EDBDF600BCE892 /* SpatialProductTest.cpp in Sources */,
 				92D765BB222819EF00178BE5 /* BackendTest.cpp in Sources */,
-				9200049F21EDBDF600BCE892 /* PackTest.cpp in Sources */,
 				9200049921EDBDF600BCE892 /* TensorTest.cpp in Sources */,
+				4829A2DC23CC26AE00623BF5 /* ConvInt8Test.cpp in Sources */,
 				920004BA21EDBDF600BCE892 /* StridedSliceTest.cpp in Sources */,
 				920004D121EDBDF600BCE892 /* CropAndResizeTest.cpp in Sources */,
+				4829A2D723CC26AE00623BF5 /* GatherTest.cpp in Sources */,
 				EBAFCE672231133F000D4EF4 /* QuantizedAddTest.cpp in Sources */,
 				9273AB4F1FE7BE4D00477B22 /* AppDelegate.mm in Sources */,
 				92C674FF22549C9900011D33 /* ReLU6Test.cpp in Sources */,
@@ -3742,7 +3791,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cat.MNN.playground6w;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cat.MNN.playgroundv45;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3765,7 +3814,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cat.MNN.playground6w;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cat.MNN.playgroundv45;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

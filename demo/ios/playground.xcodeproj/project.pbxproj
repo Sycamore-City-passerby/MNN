@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -167,7 +167,6 @@
 				AE2CFE1821FFE7390053943C /* Frameworks */,
 				AE2CFE1921FFE7390053943C /* Resources */,
 				AE37810A2200391000522E9C /* ShellScript */,
-				31CA2642FD110C0CFB2E2EA0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,23 +230,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		31CA2642FD110C0CFB2E2EA0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-playground/Pods-playground-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-playground/Pods-playground-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-playground/Pods-playground-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A9C7A039042E03F4C93FF8F9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

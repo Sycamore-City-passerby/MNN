@@ -267,7 +267,7 @@ bool CPUBackend::onAllocateBuffer() {
 }
 
 bool CPUBackend::onClearBuffer() {
-    mDynamicAllocator->release();
+    mDynamicAllocator->release(true);
     mStaticAllocator->release(false);
     return true;
 }
